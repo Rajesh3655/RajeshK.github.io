@@ -662,7 +662,7 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
+  @media (max-width: 900px), (hover: none) and (pointer: coarse) {
     nav { padding: 1.25rem 1.5rem; }
     nav.nav-scrolled { padding: 1rem 1.5rem; }
     section { padding: 2.75rem 1.25rem; }
@@ -735,6 +735,15 @@
     body { cursor: auto; }
     .cursor, .cursor-ring { display: none; }
     footer { padding: 1.5rem; }
+  }
+
+  @media (max-width: 1180px) {
+    .hero-3d-card {
+      right: 3%;
+      width: 260px;
+      height: 340px;
+      opacity: 0.92;
+    }
   }
 
   @media (max-width: 520px) {
