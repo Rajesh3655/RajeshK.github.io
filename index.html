@@ -579,6 +579,51 @@
     transform: rotate(-45deg);
   }
 
+  /* ── CERTIFICATES ── */
+  .certificates { background: var(--white); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; margin-top: 4rem;
+  }
+  .cert-card {
+    background: var(--cream); border-radius: 20px; overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid transparent;
+    display: flex; flex-direction: column;
+  }
+  .cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+    border-color: rgba(139,58,15,0.08);
+  }
+  .cert-thumb {
+    width: 100%; aspect-ratio: 4/3;
+    overflow: hidden; background: var(--sand);
+    position: relative;
+  }
+  .cert-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.5s ease;
+  }
+  .cert-card:hover .cert-thumb img { transform: scale(1.06); }
+  .cert-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.35rem; }
+  .cert-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; color: var(--deep);
+  }
+  .cert-issuer { font-size: 0.85rem; color: var(--burnt); letter-spacing: 0.3px; }
+  .cert-date { font-size: 0.75rem; color: #9A8A7A; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .cert-view {
+    margin-top: auto; align-self: flex-start;
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--deep); text-decoration: none;
+    border-bottom: 1px solid var(--deep); padding-bottom: 2px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .cert-view:hover { color: var(--burnt); border-color: var(--burnt); }
+
   /* ── EXPERIENCE ── */
   .experience { background: var(--white); }
   .exp-timeline { margin-top: 4rem; position: relative; }
@@ -690,6 +735,7 @@
     .about-grid,
     .skills-grid,
     .projects-grid,
+    .cert-grid,
     .exp-timeline {
       margin-top: 1.9rem;
     }
@@ -706,6 +752,9 @@
     .project-card { padding: 1.5rem; }
     .project-card p { margin-bottom: 1.1rem; }
     .project-footer { padding-top: 1.1rem; }
+
+    .cert-grid { grid-template-columns: 1fr; }
+    .cert-body { padding: 1.25rem; }
 
     .skill-card { padding: 1.5rem; }
     .skill-icon { margin-bottom: 1rem; }
@@ -755,19 +804,23 @@
     .about-grid,
     .skills-grid,
     .projects-grid,
+    .cert-grid,
     .exp-timeline {
       margin-top: 1.6rem;
     }
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .cert-grid {
       gap: 1rem;
     }
     .about-stat-grid { gap: 0.75rem; }
     .about-stat,
     .skill-card,
-    .project-card {
-      padding: 1.25rem;
+    .project-card,
+    .cert-card {
+      padding: 0;
     }
+    .about-stat, .skill-card, .project-card { padding: 1.25rem; }
     .contact-link { padding: 11px 16px; }
   }
 
@@ -789,6 +842,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certificates</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://rajeshk.online/Rajesh_K_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume PDF">Resume</a></li>
@@ -814,7 +868,8 @@
     <div class="hero-meta" aria-label="Profile highlights">
       <span>Junior Full-Stack Developer</span>
       <span>9+ Live Projects</span>
-      <span>BCA CGPA 9.21</span>
+      <span>MCA CGPA 9.03</span>
+      <span>BCA CGPA 9.02</span>
     </div>
   </div>
 
@@ -868,11 +923,11 @@
           <div class="about-stat-label">Concurrent Users Tested</div>
         </div>
         <div class="about-stat reveal">
-          <div class="about-stat-num">MCA</div>
-          <div class="about-stat-label">Presidency University</div>
+          <div class="about-stat-num">9.03</div>
+          <div class="about-stat-label">MCA CGPA</div>
         </div>
         <div class="about-stat reveal">
-          <div class="about-stat-num">9.21</div>
+          <div class="about-stat-num">9.02</div>
           <div class="about-stat-label">BCA CGPA</div>
         </div>
       </div>
@@ -1077,6 +1132,76 @@
   </div>
 </section>
 
+<!-- ── CERTIFICATES ── -->
+<section class="certificates" id="certificates" aria-labelledby="certificates-heading">
+  <div class="section-label">Credentials</div>
+  <h2 class="section-title" id="certificates-heading">My <em>Certificates</em></h2>
+
+  <div class="cert-grid">
+
+    <article class="cert-card reveal">
+      <div class="cert-thumb">
+        <img src="certicicates/Besent_Technologies.jpeg" alt="Besent Technologies certificate" loading="lazy" decoding="async">
+      </div>
+      <div class="cert-body">
+        <div class="cert-date">Certificate</div>
+        <h3>Besent Technologies</h3>
+        <div class="cert-issuer">Certification</div>
+        <a href="certicicates/Besent_Technologies.jpeg" target="_blank" rel="noopener noreferrer" class="cert-view">View Certificate</a>
+      </div>
+    </article>
+
+    <article class="cert-card reveal">
+      <div class="cert-thumb">
+        <img src="certicicates/Hacker_Rank.png" alt="HackerRank certificate" loading="lazy" decoding="async">
+      </div>
+      <div class="cert-body">
+        <div class="cert-date">Certificate</div>
+        <h3>HackerRank</h3>
+        <div class="cert-issuer">Certification</div>
+        <a href="certicicates/Hacker_Rank.png" target="_blank" rel="noopener noreferrer" class="cert-view">View Certificate</a>
+      </div>
+    </article>
+
+    <article class="cert-card reveal">
+      <div class="cert-thumb">
+        <img src="certicicates/Prodigy.jpeg" alt="Prodigy certificate" loading="lazy" decoding="async">
+      </div>
+      <div class="cert-body">
+        <div class="cert-date">Certificate</div>
+        <h3>Prodigy</h3>
+        <div class="cert-issuer">Certification</div>
+        <a href="certicicates/Prodigy.jpeg" target="_blank" rel="noopener noreferrer" class="cert-view">View Certificate</a>
+      </div>
+    </article>
+
+    <article class="cert-card reveal">
+      <div class="cert-thumb">
+        <img src="certicicates/Qspiders.jpeg" alt="Qspiders certificate" loading="lazy" decoding="async">
+      </div>
+      <div class="cert-body">
+        <div class="cert-date">Certificate</div>
+        <h3>Qspiders</h3>
+        <div class="cert-issuer">Certification</div>
+        <a href="certicicates/Qspiders.jpeg" target="_blank" rel="noopener noreferrer" class="cert-view">View Certificate</a>
+      </div>
+    </article>
+
+    <article class="cert-card reveal">
+      <div class="cert-thumb">
+        <img src="certicicates/TNSif_Capgemini.jpeg" alt="TNSIF Capgemini certificate" loading="lazy" decoding="async">
+      </div>
+      <div class="cert-body">
+        <div class="cert-date">Certificate</div>
+        <h3>TNSIF Capgemini</h3>
+        <div class="cert-issuer">Certification</div>
+        <a href="certicicates/TNSif_Capgemini.jpeg" target="_blank" rel="noopener noreferrer" class="cert-view">View Certificate</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
 <!-- ── EXPERIENCE ── -->
 <section class="experience" id="experience" aria-labelledby="exp-heading">
   <div class="section-label">Background</div>
@@ -1086,14 +1211,14 @@
     <div class="exp-item reveal">
       <div class="exp-dot" aria-hidden="true"></div>
       <div class="exp-date">Current</div>
-      <div class="exp-role">MCA</div>
+      <div class="exp-role">MCA — CGPA 9.03</div>
       <div class="exp-company">Presidency University, Bengaluru</div>
       <div class="exp-desc">Continuing to deepen software engineering skills through structured academics and hands-on product development.</div>
     </div>
     <div class="exp-item reveal">
       <div class="exp-dot" aria-hidden="true"></div>
       <div class="exp-date">Completed</div>
-      <div class="exp-role">BCA — CGPA 9.21</div>
+      <div class="exp-role">BCA — CGPA 9.02</div>
       <div class="exp-company">Presidency University</div>
       <div class="exp-desc">Built a strong foundation in programming, databases, web development, and software problem solving.</div>
     </div>
@@ -1175,7 +1300,7 @@ document.addEventListener('mousemove', e => {
   requestAnimationFrame(raf);
 })();
 
-document.querySelectorAll('a, button, .project-card, .skill-card, .about-stat').forEach(el => {
+document.querySelectorAll('a, button, .project-card, .skill-card, .about-stat, .cert-card').forEach(el => {
   el.addEventListener('mouseenter', () => { cursor.classList.add('hovered'); cursorRing.classList.add('hovered'); });
   el.addEventListener('mouseleave', () => { cursor.classList.remove('hovered'); cursorRing.classList.remove('hovered'); });
 });
